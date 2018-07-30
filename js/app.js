@@ -13,7 +13,7 @@ $.ajax({
         $(`.person-${i} .street`).html(data.results[i].location.street);
         $(`.person-${i} .state`).html(data.results[i].location.state);
         $(`.person-${i} .postcode`).html(data.results[i].location.postcode);
-        $(`.person-${i} .birthday`).html(`Birthday: ${data.results[i].dob.date.substr(8,2)}/${data.results[i].dob.date.substr(5,2)}/${data.results[i].dob.date.substr(2,2)}`);
+        $(`.person-${i} .birthday`).html(`Birthday: ${data.results[i].dob.date.substr(5,2)}/${data.results[i].dob.date.substr(8,2)}/${data.results[i].dob.date.substr(2,2)}`);
       }
     }
   });
