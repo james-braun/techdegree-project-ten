@@ -35,13 +35,23 @@ h2 {
 .email,
 .city,
 .phone,
-.address,
+.street,
 .birthday {
     margin: .5em 0 0 1em;
 }
 
+.divider {
+    width: 19em;
+    margin: 1em auto;
+    border: 1px solid grey;
+}
 
-
+.city,
+.state,
+.postcode {
+    display: inline-block;
+}
+/* styles below provided by inspirationalpixels.com/custom-popup-modal */
 /* Outer */
 .popup {
 	width:100%;

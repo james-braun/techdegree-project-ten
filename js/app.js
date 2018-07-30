@@ -3,7 +3,7 @@ $.ajax({
     dataType: 'json',
     success: function(data) {
       console.log(data);
-      for (i = 0; i < data.results.length; ++i) {
+      for (let i = 0; i < data.results.length; ++i) {
         $(`.person-${i} img`).attr('src', `${data.results[i].picture.thumbnail}`);
         $(`.person-${i} img`).attr('alt', `${data.results[i].name.first} ${data.results[i].name.last}`);
         $(`.person-${i} .name`).html(data.results[i].name.first + " " + data.results[i].name.last);
@@ -12,11 +12,13 @@ $.ajax({
         $(`.person-${i} .phone`).html(data.results[i].phone);
         $(`.person-${i} .street`).html(data.results[i].location.street);
         $(`.person-${i} .state`).html(data.results[i].location.state);
-        $(`.person-${I} .postcode`).html(data.results[i].location.postcode);
+        $(`.person-${i} .postcode`).html(data.results[i].location.postcode);
+        $(`.person-${i} .birthday`).html(`Birthday: ${data.results[i].dob.date.substr(8,2)}/${data.results[i].dob.date.substr(5,2)}/${data.results[i].dob.date.substr(2,2)}`);
       }
     }
   });
 
+  // functions below provided by inspirationalpixels.com/custom-popup-modal
   $(function() {
     //----- OPEN
     $('[data-popup-open]').on('click', function(e) {
